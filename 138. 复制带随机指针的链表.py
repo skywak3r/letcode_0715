@@ -1,30 +1,47 @@
 # -*- coding:utf-8 -*-
-import copy
+"""
+# Definition for a Node.
 class Node:
     def __init__(self, x: int, next: 'Node' = None, random: 'Node' = None):
         self.val = int(x)
         self.next = next
         self.random = random
+"""
 
+### 构造交替的矩阵，并且发现 head.next.random = head.random.next
 class Solution:
-    def copyRandomList(self, head: 'Node') -> 'Node':
+    def copyRandomList(self, head: 'Optional[Node]') -> 'Optional[Node]':
+        # print(head)
+        if not head:
+            return head
+        cur = head
+        while cur:
+            newNode = Node(cur.val, cur.next)
+            cur.next = newNode
+            cur = newNode.next
+        cur = head
+        while cur:
+            if cur.random:
+                cur.next.random = cur.random.next
+            cur = cur.next.next
+        cur = head
+        dummy = Node(-1)
+        newList = dummy
+        while cur:
+            newList.next = cur.next
+            cur = cur.next.next
+            newList = newList.next
+        return dummy.next
 
-        tmp1 = copy.copy(head)
-        tmpHead = copy.copy(head)
-        while tmp1 != None:
-
-            tmp2 = Node(tmp1.val,tmp1.next,tmp1.random)
-
-            tmp1 = tmp1.next
-        return tmpHead
-
-
-
-        pass
 
 """
 解法1：
 哈希表
+
+我们用哈希表来解决这个问题
+首先创建一个哈希表，再遍历原链表，遍历的同时再不断创建新节点
+我们将原节点作为key，新节点作为value放入哈希表中
+
 class Solution:
     def copyRandomList(self, head: 'Node') -> 'Node':
         if not head: return
