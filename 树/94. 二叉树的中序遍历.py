@@ -34,7 +34,7 @@ class Solution:
 #         self.right = right
 class Solution:
     def inorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
-        if not root:
+        if not root:-
             return []
         stack = []
         res = []
