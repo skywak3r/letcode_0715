@@ -1,4 +1,10 @@
-import heapq
+# -*- coding:utf-8 -*-:
+"""
+尽可能分成三等分
+我写的代码2等分了，只能过一部分的案例
+
+使用大顶堆，每次将大顶堆的最大值一分为2  看是否乘积增加，
+
 class Solution:
     def cuttingRope(self, n: int) -> int:
         factor = []
@@ -26,7 +32,7 @@ class Solution:
         # print(f"test:{test}")
         # print(multiMax(test))
         if n <4:
-            return n
+            return n-1
         while True:
             factor = split(factor)
             tmp = multiMax(factor)
@@ -42,37 +48,28 @@ class Solution:
 
 
 
+"""
 
+"""
+dp
 
+绳子切割问题： 前面长度为j   后面长度i-j
+前面的部分是不剪的部分，
+后面可以剪  j dp[i-j]
+不剪： j * (i-j)
+当前的 dp
+三者取最大
 
+class Solution:
+    def cuttingRope(self, n: int) -> int:
+        if n < 4:
+            return n -1
+        dp = [0] * (n+1)
+        dp[2] = 1
 
+        for i in range(4,n+1):
+            for j in range(2,i):
+                dp[i] = max([dp[i-j]*j,(i-j)*j,dp[i]])
+        return dp[-1]
 
-        # def dfs(count, row, col, used):
-        #     # print(word[1])
-        #
-        #
-        #     if (row < 0 or row > m or col < 0 or col > n or not used[row][col] and (board[row][col] != word[count-1])):
-        #         print(word[count])
-        #
-        #         return 0
-        #     print(word[count])
-        #     used[row][col] = True
-        #     up = dfs(count + 1, row - 1, col, used)
-        #     down = dfs(count + 1, row + 1, col, used)
-        #     left = dfs(count + 1, row, col - 1, used)
-        #     right = dfs(count + 1, row - 1, col + 1, used)
-        #     count = 1 + up + down + left + right
-        #     used[row][col] = False
-        #
-        #     return count
-        # for i in range(m):
-        #     for j in range(n):
-        #         ans = max(count,dfs(count,i,j,used))
-        # # dfs(count, 0, 0, used)
-        # return count == len(word)
-
-if __name__ == "__main__":
-    a = Solution()
-    b = 8
-    print(a.cuttingRope(b))
-
+"""
