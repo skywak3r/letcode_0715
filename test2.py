@@ -1,9 +1,4 @@
-def split(num):
-    cur = num
-    src = []
-    while cur:
-        cur = cur // 10
-        a = cur % 10
-        src.append(a)
-    return sum(src)
-print(split(7))
+import heapq
+a = [1,2,-1,1.4]
+aa = heapq.heapify(a)
+a.

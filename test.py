@@ -1,12 +1,6 @@
-import heapq
-from collections import deque
-from collections import Counter
+a = "1234565678"
+b = "789"
 
-class Solution:
-    def myFun(self,nums):
-        pass
-
-if __name__ == "__main__":
-    queue = deque([1,2,3,4,-1])
-    for i in queue.:
-        print(i)
+a= set(a)
+b = set(b)
+print(a^b)
