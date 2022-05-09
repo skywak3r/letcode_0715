@@ -1,9 +1,11 @@
 # -*- coding:utf-8 -*-
-
-1. 去重 newNums = list(set(newNums))
-2. 思路是 先去除小于0 的
- 把在范围内的值，放在指定位置。
-依图面试的算法题。
+#
+# 1. 去重 newNums = list(set(newNums))
+# 2. 思路是 先去除小于0 的
+#  把在范围内的值，放在指定位置。
+# 依图面试的算法题。
+#
+# 第二次做的时候 忘记去重了
 
 class Solution:
     def firstMissingPositive(self, nums: List[int]) -> int:

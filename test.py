@@ -1,6 +1,4 @@
-a = "1234565678"
-b = "789"
+import collections
+s = "1234"
 
-a= set(a)
-b = set(b)
-print(a^b)
+print(collections.deque(s))

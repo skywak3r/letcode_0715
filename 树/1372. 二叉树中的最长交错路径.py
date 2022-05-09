@@ -5,6 +5,16 @@
 #         self.val = val
 #         self.left = left
 #         self.right = right
+
+
+
+
+"""
+思路：遍历每一个点，找出最大的。用dfs控制遍历
+
+
+"""
+
 class Solution:
     def longestZigZag(self, root: TreeNode) -> int:
         maxLen = 0

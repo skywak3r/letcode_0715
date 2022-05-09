@@ -30,4 +30,23 @@ a+(n+1)b+nc=2(a+b)⟹a=c+(n−1)(b+c)
 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
 
 
+空间复杂度 ： 0n
+
 """
+
+双指针
+
+class Solution:
+    def detectCycle(self, head: ListNode) -> ListNode:
+        fast, slow = head, head
+        while fast and fast.next:
+            slow = slow.next
+            fast = fast.next.next
+            if slow == fast:
+                p = slow
+                q = head
+                while q != p:
+                    p = p.next
+                    q = q.next
+                return p
+        return None
