@@ -1,4 +1,8 @@
 # -*- coding:utf-8 -*-
+""""""
+"""
+一部一部走
+"""
 class Solution:
     def generateMatrix(self, n: int) -> List[List[int]]:
         up, down, left, right = 0, n-1, 0, n-1
