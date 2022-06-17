@@ -2,6 +2,7 @@
 
 """
 dp[i]  表示以nums[i] 结尾的最长子序列
+dp[i] 可由dp[j] 推导出来
 """
 
 class Solution:

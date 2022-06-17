@@ -28,3 +28,18 @@ def quicksort(nums, left, right):
 nums = [10,9,8,1,-2,10,8,4]
 quicksort(nums,0, len(nums) -1)
 print(nums)
+
+
+def partition(nums, left, right):
+    baseNum = nums[left]
+    i, j = left, right
+    while i < j :
+        while i < j and nums[j] >= baseNum:
+            j -= 1
+        nums[i] = nums[j]
+        while i < j and nums[i] <= baseNum:
+            i += 1
+        nums[j] = nums[i]
+    nums[i] = baseNum
+    return i
+

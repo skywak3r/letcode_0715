@@ -31,4 +31,23 @@ class Solution:
                 count = 1
             ans = max(ans, count)
         return ans 
+        
+class Solution:
+    def findLengthOfLCIS(self, nums: List[int]) -> int:
+        if len(nums) == 1:
+            return 1
+        length = len(nums)
+        l,r = 0,1
+        ans = 1
+        while r < length:
+            tmp = 1
+            while r < length and nums[r] > nums[l]:
+                tmp += 1 
+                r += 1
+                l += 1
+                ans = max(tmp, ans)
+            l += 1
+            r += 1
+        return ans 
+            
 """

@@ -81,7 +81,6 @@ class Solution:
         ans = 0
         left, right = 0, len(height) - 1
         leftMax = rightMax = 0
-
         while left < right:
             leftMax = max(leftMax, height[left])
             rightMax = max(rightMax, height[right])

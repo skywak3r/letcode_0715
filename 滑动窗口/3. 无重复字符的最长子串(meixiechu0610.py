@@ -1,7 +1,12 @@
 # -*- coding:utf-8 -*-
 
 #滑动窗口我还不太会
+"""
+用外部控制左边界，for循环控制右边界。
+如果进入窗口的重复了，一定是和左边界重复了，所以删除左边界在set中的值， 调整左边界的范围。
 
+
+"""
 class Solution:
     def lengthOfLongestSubstring(self, s: str) -> int:
         if not s:
