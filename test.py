@@ -1,6 +1,4 @@
-nums = [3,3]
-target = 6
-for i in range(len(nums)):
-    remain = target - nums[i]
-    if remain in nums[i + 1:]:
-        print([i,nums.index(remain)])
+import bisect
+a = [1,3,4,5,7]
+print(bisect.insort(a,2))
+print(a)
