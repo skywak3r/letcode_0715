@@ -1,6 +1,7 @@
 # -*- coding:utf-8 -*-
 """
 字符串处理
+直接倒序添加原句的单词即可， 看剑指88
 
 class Solution:
     def reverseWords(self, s: str) -> str:

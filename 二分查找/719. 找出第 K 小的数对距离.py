@@ -46,7 +46,6 @@ class Solution:
                     right += 1
                     cnt += right - left - 1
             return cnt
-
         low = 0
         upper = nums[-1] - nums[0]
         while low < upper:
