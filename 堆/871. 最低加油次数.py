@@ -3,7 +3,7 @@
 进入for循环之后 if语句判断的是特殊情况， 一般情况放在后面
 
 """
-
+import heapq
 class Solution:
     def minRefuelStops(self, target: int, startFuel: int, stations: List[List[int]]) -> int:
         cur_fuel = startFuel

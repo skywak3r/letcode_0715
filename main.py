@@ -1,40 +1,26 @@
-# This is a sample Python script.
-
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+import math
 
 
-class Solution(object):
-    def replaceSpace(self, s: str) ->str :
-        """
+class Solution:
+    def calc_weight(self, x, y):
+        def sigmod(x):
+            return 1 / (1 + math.exp(-x))
 
-        请实现一个函数，把字符串 s 中的每个空格替换成"%20"。
+        w = 0
+        epochs = 10
+        lr = 0.01
+        for epoch in range(epochs):
+            y_p = [sigmod(xx * w) for xx in x]
+            dw = sum([(y[i]-y_p[i]) * x[i] for i in range(len(x))])
 
- 
+            # print(dw)
+            w += lr * dw
+            # print(y_p)
 
-示例 1：
+        return round(w, 5)
+        # write code here
 
-输入：s = "We are happy."
-输出："We%20are%20happy."
- 
-
-限制：
-
-0 <= s 的长度 <= 10000
-
-        :type s: str
-        :rtype: str
-        """
-        res = []
-        for c in s :
-            if c == " ": res.append("%20")
-            else: res.append(c)
-        return "".join(res)
-
-
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    s1 = Solution()
-    print(s1.replaceSpace("we are young"))
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+if __name__ == "__main__":
+    a = Solution()
+    x,y = [-3,1,2,1,-2,-6,3,1,-2,-4],[0, 1, 1, 1, 0, 0, 1, 1, 0, 0]
+    print(a.calc_weight(x,y))

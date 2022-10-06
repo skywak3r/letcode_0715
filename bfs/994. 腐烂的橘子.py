@@ -17,7 +17,7 @@ class Solution:
                     count += 1
                 elif grid[i][j] == 2:
                     queue.append((i,j))
-        while queue and  count>0:
+        while queue and count>0:
             ans += 1
             length = len(queue)
             for i in range(length):
