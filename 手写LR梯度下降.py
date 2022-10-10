@@ -30,8 +30,9 @@ for k in range(iterations):
         dl_dw += (y[i]-y_pred_i) * x[i]
         dl_db += (y[i]-y_pred_i) * 1
         logL += (y[i]*log(y_pred_i) + (1-y[i])*log(1-y_pred_i))
+        print(logL)
     #更新模型参数
     w += learning_rate * dl_dw
-    b += learning_rate *
+    b += learning_rate * dl_db
 
 print("w={}, b={}".format(w, b))
